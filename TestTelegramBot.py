@@ -17,4 +17,4 @@ def handle_photo(message : telebot.types.Message):
     bot.reply_to(message, 'Nice meme bro')
 
 
-bot.polling(none_stop = True)
+bot.polling(none_stop = True) 
