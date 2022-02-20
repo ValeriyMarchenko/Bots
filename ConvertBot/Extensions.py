@@ -1,7 +1,7 @@
 import json
 import requests
 from Config import exchanges
-import App
+
 
 
 class ConvertionException(Exception):
@@ -13,17 +13,17 @@ class CryptoConverter:
     def convert(base : str, quote : str, amount : str):
         
         if quote == base:
-            raise ConvertionException(f'Cant convert similar currency {base}')
+            raise ConvertionException(f'Cant convert similar currency: {base}')
 
         try:  
             quote_ticker = exchanges[quote]
         except KeyError:
-            raise ConvertionException(f'Cant process {quote}')
+            raise ConvertionException(f'Cant process: {quote}')
         
         try:
             base_ticker = exchanges[base]
         except KeyError:
-            raise ConvertionException(f'Cant process {base}')
+            raise ConvertionException(f'Cant process: {base}')
 
         try:
             amount = float(amount)
